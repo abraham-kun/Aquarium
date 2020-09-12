@@ -21,9 +21,11 @@ function calcCost() {
         alert('Invalid length or height');
         return;
 	}
-    var glassCost=(((length*width*2)+(width*height*2)+(length*height*2))*0.06);
+      var glassCost=(((length*width*2)+(width*height*2)+(length*height*2))*0.06);
 	var glueCost=((height*4)+(length*2)+(width*2))*0.1; 
 	var labour=(60/6000)*((height*4)+(length*2)+(width*2));
     var GST=(glassCost+glueCost+labour)*0.1;
-    costObj.innerHTML = glassCost+glueCost+labour+GST;
+	var x = glassCost+glueCost+labour+GST;
+	var RoundNumbers = x.toFixed(2);
+    costObj.innerHTML = RoundNumbers;
 }
